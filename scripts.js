@@ -132,7 +132,20 @@ function editCardContent(card, newName, newImage, newTierImg) {
 const cardContainer = document.getElementById("card-container");
 
 function searchBar() {
-  const input = document.getElementById('input');
+  let input, filter, searching, h2;
+  input = document.getElementById('input');
+  filter = input.value.toLowerCase();
+  searching = document.getElementById("searching");
+  h2 = searching.getElementsByTagName('h2');
+  
+  for (let i = 0; i < tierOnePets.length; i++) {
+    let nameValue = tierOnePets[i].name;
+    if (nameValue.toLowerCase().indexOf(filter) > -1) {
+      nameValue[i].style.display = "";
+    } else {
+      nameValue[i].style.display = "none";
+    }
+  }
 }
 
 // This calls the addCards() function when the page is first loaded
