@@ -78,6 +78,7 @@ const tierOnePets = [
 // you should use more than just an array of strings to store it all.
 
 // This function adds cards the page to display the data in the array
+/*
 function showCards() {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
@@ -99,13 +100,14 @@ function showCards() {
     } else if (i == 2) {
       imageURL = EAST_LOS_HIGH_POSTER_URL;
     }
-    */
+
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(nextCard, name, tierOnePetsImage, tierImg); // Edit title and image
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
 }
-
+*/
+/*
 function editCardContent(card, newName, newImage, newTierImg) {
   card.style.display = "block";
 
@@ -121,35 +123,58 @@ function editCardContent(card, newName, newImage, newTierImg) {
   /*
   cardImage.src = newImageURL;
   cardImage.alt = newTitle + " Poster";
-  */
+
 
   // You can use console.log to help you debug!
   // View the output by right clicking on your website,
   // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newName, "- html: ", card);
+  //console.log("new card:", newName, "- html: ", card);
+}
+*/
+
+const cardContainer = document.querySelector('.card-container')
+
+const createCard = (data) => {
+  return (
+    `
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="${data.img}"/>
+        </div>
+        <h2>${data.name}</h2>
+        <img id="tier-img" src="${data.tierImg}" />
+      </div>
+    </div>
+    `);
+};
+
+const displayCards = () => {
+  cardContainer.innerHTML = '';
+  tierOnePets.forEach(data => {
+    cardContainer.innerHTML += createCard(data);
+  })
 }
 
-const cardContainer = document.getElementById("card-container");
-
 function searchBar() {
-  let input, filter, searching, h2;
-  input = document.getElementById('input');
-  filter = input.value.toLowerCase();
-  searching = document.getElementById("searching");
-  h2 = searching.getElementsByTagName('h2');
-  
-  for (let i = 0; i < tierOnePets.length; i++) {
-    let nameValue = tierOnePets[i].name;
-    if (nameValue.toLowerCase().indexOf(filter) > -1) {
-      nameValue[i].style.display = "";
-    } else {
-      nameValue[i].style.display = "none";
-    }
+  const input = document.getElementById('search-input').value.toLowerCase();
+  let nameValue = '';
+  for(let i = 0; i < tierOnePets.length; i++) {
+    nameValue = tierOnePets[i].name;
+  }
+  if (nameValue.includes(input)) {
+    console.log("yes");
+  } else {
+    console.log("no");
   }
 }
 
+
+
+
+
 // This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
+document.addEventListener("DOMContentLoaded", () => displayCards());
 
 /*
 function quoteAlert() {

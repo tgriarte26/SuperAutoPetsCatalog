@@ -4,7 +4,6 @@
     <title>Super Auto Pets</title>
     <meta name="description" content="Super Auto Pets Catalog" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
@@ -13,24 +12,16 @@
     </header>
     <div class="search-bar">
       <div class="input-filter">
-        <input type="text" onkeyup="searchBar()" class="search-bar" id="searching" placeholder="Search..." />
+        <input type="text" class="search-bar" onkeyup="searchBar()" id="search-input" placeholder="Search..." />
       </div>
     </div>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <div class="card-image">
-          <img src=""/>
-        </div>
-        <h2>TV Show Title</h2>
-        <img id="tier-img" src="" />
-      </div>
-    </div>
+    <div class="card-container"></div>
     <div class="footer">
       <!--
         <button onclick="quoteAlert()">Get A Quote!</button>
         <button onclick="removeLastCard()">Remove A Card!</button>
       -->
     </div>
+    <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
