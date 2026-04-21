@@ -31,71 +31,94 @@ const EAST_LOS_HIGH_POSTER_URL =
   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 */
 
-const tierOnePets = [
+const SuperAutoPets = [
   {
     name: "Ant",
-    img: "tierOnePetsImages/Ant.png",
-    tierNum: '1',
+    img: "SuperAutoPetsImages/Ant.png",
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
+    statsLink: "stats.html"
   },
   {
     name: "Baku",
-    img: 'tierOnePetsImages/Baku.png',
+    img: 'SuperAutoPetsImages/Baku.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Beaver",
-    img: "tierOnePetsImages/Beaver.png",
+    img: "SuperAutoPetsImages/Beaver.png",
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Cricket",
-    img: 'tierOnePetsImages/Cricket.png',
+    img: 'SuperAutoPetsImages/Cricket.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Duck",
-    img: 'tierOnePetsImages/Duck.png',
-    tierNum: 1,    
+    img: 'SuperAutoPetsImages/Duck.png',
+    tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",    
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Fish",
-    img: 'tierOnePetsImages/Fish.png',
+    img: 'SuperAutoPetsImages/Fish.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Horse",
-    img: 'tierOnePetsImages/Horse.png',
+    img: 'SuperAutoPetsImages/Horse.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Mosquito",
-    img: 'tierOnePetsImages/Mosquito.png',
+    img: 'SuperAutoPetsImages/Mosquito.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Otter",
-    img: 'tierOnePetsImages/Otter.png',
+    img: 'SuperAutoPetsImages/Otter.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Pig",
-    img: 'tierOnePetsImages/Pig.png',
+    img: 'SuperAutoPetsImages/Pig.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Pigeon",
-    img: 'tierOnePetsImages/Pigeon.png',
+    img: 'SuperAutoPetsImages/Pigeon.png',
     tierNum: 1,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
   },
 ]
@@ -110,10 +133,10 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < tierOnePets.length; i++) {
-    let name = tierOnePets[i].name;
-    let tierOnePetsImage = tierOnePets[i].img;
-    let tierImg = tierOnePets[i].tierImg;
+  for (let i = 0; i < SuperAutoPets.length; i++) {
+    let name = SuperAutoPets[i].name;
+    let SuperAutoPetsImage = SuperAutoPets[i].img;
+    let tierImg = SuperAutoPets[i].tierImg;
 
     // This part of the code doesn't scale very well! After you add your
     // own data, you'll need to do something totally different here.
@@ -128,7 +151,7 @@ function showCards() {
     }
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, name, tierOnePetsImage, tierImg); // Edit title and image
+    editCardContent(nextCard, name, SuperAutoPetsImage, tierImg); // Edit title and image
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
 }
@@ -158,27 +181,52 @@ function editCardContent(card, newName, newImage, newTierImg) {
 }
 */
 
-const cardContainer = document.querySelector('.card-container')
+const cardContainer = document.querySelector('.card-container');
+const statsContainer = document.querySelector('.stats-container');
 
 const createCard = (data) => {
   return (
     `
-    <div class="card" data-tier="${data.tierNum}">
-      <div class="card-content">
-        <div class="card-image">
-          <img src="${data.img}"/>
+      <div class="card" data-tier="${data.tierNum}">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="${data.img}"/>
+          </div>
+          <h2>${data.name}</h2>
+          <div class="card-footer">
+            <div class="img-container">
+              <img id="tier-img" src="${data.tierImg}" />
+              <img id="pack-img" src="${data.packImg}" />        
+            </div>
+            <a href="${data.statsLink}">
+              <button class="stats-button">stats</button>
+            </a>
+          </div>
         </div>
-        <h2>${data.name}</h2>
-        <img id="tier-img" src="${data.tierImg}" />
       </div>
-    </div>
     `);
 };
 
+
+const statsCard = (data) => {
+  return (
+    `
+          <h2>${data.name}</h2>
+    `);
+}
+
 const displayCards = (filter = 'all') => {
   cardContainer.innerHTML = '';
-  tierOnePets.filter(data => filter === 'all').forEach(data => {
+  SuperAutoPets.filter(data => filter === 'all').forEach(data => {
     cardContainer.innerHTML += createCard(data);
+  })
+}
+
+
+const displayStats = (filter = 'all') => {
+  statsContainer.innerHTML = '';
+  SuperAutoPets.filter(data => filter === 'all').forEach(data => {
+  statsContainer.innerHTML += statsCard(data);
   })
 }
 
@@ -195,10 +243,9 @@ function searchBar() {
 }
 
 function filterCards(filter) {
-  document.querySelectorAll('.button-container .filter-button').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
+  document.querySelector('.button-container .filter-button').forEach(btn => {
+      btn.classList.toggle('active');
+  })
 
   document.querySelectorAll('.card').forEach(card => {
     const tier = card.getAttribute('data-tier');
@@ -212,7 +259,7 @@ function filterCards(filter) {
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", () => displayCards());
-
+document.addEventListener("DOMContentLoaded", () => displayStats());
 /*
 function quoteAlert() {
   console.log("Button Clicked!");
