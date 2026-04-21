@@ -31,15 +31,17 @@ body {
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin: 20px
+  margin: 10px 10px;
 }
 
 .card {
+  width: 250px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 5px solid #ffbd00;
@@ -47,6 +49,10 @@ body {
   box-shadow: 7px 7px rgba(255, 189, 0, 0.7);
   background-color: rgba(255, 189, 0, 0.6);
   margin: 5px;
+}
+
+.card:hover {
+  background-color: rgba(255, 189, 0, 1);
 }
 
 .card-content {
@@ -86,6 +92,42 @@ body {
   justify-content: center;
   border-radius: 10px;
   padding: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-button {
+  font-family: "mainFont", sans-serif;
+  width: 7rem;
+  height: 3rem;
+  color: black;
+  border: 5px solid #0078ff;
+  border-radius: 1rem;
+  box-shadow: 7px 7px rgba(0, 94, 255, 0.7);
+  background-color: rgba(0, 94, 255, 0.6);
+}
+
+.inside-filter-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.inside-filter-button img {
+  width: 25px;
+  margin-bottom: 100px;
+}
+
+
+.filter-button.active {
+  background-color: rgba(0, 94, 255, 0.8)
+}
+
+.filter-button:hover {
+  background-color: rgba(0, 94, 255, 0.8)
 }
 
 .footer {

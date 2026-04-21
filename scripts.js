@@ -35,41 +35,67 @@ const tierOnePets = [
   {
     name: "Ant",
     img: "tierOnePetsImages/Ant.png",
+    tierNum: '1',
+    tierImg: "tierDiceImages/tier1dice.png",
+  },
+  {
+    name: "Baku",
+    img: 'tierOnePetsImages/Baku.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Beaver",
     img: "tierOnePetsImages/Beaver.png",
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Cricket",
     img: 'tierOnePetsImages/Cricket.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Duck",
     img: 'tierOnePetsImages/Duck.png',
+    tierNum: 1,    
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Fish",
     img: 'tierOnePetsImages/Fish.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Horse",
     img: 'tierOnePetsImages/Horse.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Mosquito",
     img: 'tierOnePetsImages/Mosquito.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
   {
     name: "Otter",
     img: 'tierOnePetsImages/Otter.png',
+    tierNum: 1,
+    tierImg: "tierDiceImages/tier1dice.png",
+  },
+  {
+    name: "Pig",
+    img: 'tierOnePetsImages/Pig.png',
+    tierNum: 1,
+    tierImg: "tierDiceImages/tier1dice.png",
+  },
+  {
+    name: "Pigeon",
+    img: 'tierOnePetsImages/Pigeon.png',
+    tierNum: 1,
     tierImg: "tierDiceImages/tier1dice.png",
   },
 ]
@@ -137,7 +163,7 @@ const cardContainer = document.querySelector('.card-container')
 const createCard = (data) => {
   return (
     `
-    <div class="card">
+    <div class="card" data-tier="${data.tierNum}">
       <div class="card-content">
         <div class="card-image">
           <img src="${data.img}"/>
@@ -149,29 +175,40 @@ const createCard = (data) => {
     `);
 };
 
-const displayCards = () => {
+const displayCards = (filter = 'all') => {
   cardContainer.innerHTML = '';
-  tierOnePets.forEach(data => {
+  tierOnePets.filter(data => filter === 'all').forEach(data => {
     cardContainer.innerHTML += createCard(data);
   })
 }
 
 function searchBar() {
   const input = document.getElementById('search-input').value.toLowerCase();
-  let nameValue = '';
-  for(let i = 0; i < tierOnePets.length; i++) {
-    nameValue = tierOnePets[i].name;
-  }
-  if (nameValue.includes(input)) {
-    console.log("yes");
-  } else {
-    console.log("no");
-  }
+  document.querySelectorAll('.card').forEach(card => {
+    const nameValue = card.querySelector('h2').textContent.toLowerCase();
+    if (nameValue.includes(input)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  })
 }
 
+function filterCards(filter) {
+  document.querySelectorAll('.button-container .filter-button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
 
-
-
+  document.querySelectorAll('.card').forEach(card => {
+    const tier = card.getAttribute('data-tier');
+    if (filter === 'all' || tier === filter) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  })
+}
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", () => displayCards());
