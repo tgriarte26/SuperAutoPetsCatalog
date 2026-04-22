@@ -1,0 +1,60 @@
+body {
+  background-color: rgba(255, 189, 0, 0.6);
+}
+
+.stats-upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.stats-footer {
+  width: 70%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #ffbd00;
+  border-radius: 1rem;
+  box-shadow: 7px 7px rgba(255, 189, 0, 0.7);
+  background-color: rgba(255, 189, 0, 0.6);
+  margin: auto;
+  gap: 50px;
+  padding: 10px;
+}
+
+.footer-info {
+  display: inline;
+  text-align: center;
+  border: 5px solid #ff0000;
+  border-radius: 1rem;
+  background-color: rgba(255, 0, 0, 0.6);
+  margin: auto;
+  gap: 50px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+p {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+.divider {
+  margin: 20px 0;
+}
+
+.attackImg, .healthImg {
+  width: 10%;
+}

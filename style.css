@@ -20,6 +20,7 @@ body {
 #logo {
   width: 12%;
   margin-left: 1rem;
+  padding: 10px;
 }
 
 .title {
@@ -153,7 +154,7 @@ body {
 }
 
 .stats-button:hover {
-  background-color: rgba(255, 10, 0, 1)
+  background-color: rgba(255, 10, 0, 0.9)
 }
 
 .footer {
@@ -175,4 +176,10 @@ button {
   font-size: 22px;
   cursor: pointer;
   margin: 5px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }

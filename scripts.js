@@ -39,15 +39,15 @@ const SuperAutoPets = [
     tierImg: "tierDiceImages/tier1dice.png",
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
-    statsLink: "stats.html"
-  },
-  {
-    name: "Baku",
-    img: 'SuperAutoPetsImages/Baku.png',
-    tierNum: 1,
-    pack: 'turtle',
-    packImg: "packsImages/turtlepack.png",
-    tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 2,
+      health: 2,
+    },
+    ability: {
+      levelOne: "Faint: Give a random friend +1 attack and +1 health.",
+      levelTwo: "Faint: Give a random friend +2 attack and +2 health.",
+      levelThree: "Faint: Give a random friend +3 attack and +3 health.",
+    }
   },
   {
     name: "Beaver",
@@ -56,6 +56,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 3,
+      health: 2,
+    },
+    ability: {
+      levelOne: "Sell: Give two random friends +1 attack.",
+      levelTwo: "Sell: Give two random friends +2 attack.",
+      levelThree: "Sell: Give two random friends +3 attack.",
+    }
   },
   {
     name: "Cricket",
@@ -64,6 +73,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 1,
+      health: 3,
+    },
+    ability: {
+      levelOne: "Faint: Summon one 1/1 Cricket.",
+      levelTwo: "Faint: Summon one 2/2 Cricket.",
+      levelThree: "Faint: Summon one 3/3 Cricket.",
+    }
   },
   {
     name: "Duck",
@@ -72,6 +90,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",    
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 2,
+      health: 3,
+    },
+    ability: {
+      levelOne: "Sell: Give shop pets +1 health.",
+      levelTwo: "Sell: Give shop pets +2 health.",
+      levelThree: "Sell: Give shop pets +3 health.",
+    }
   },
   {
     name: "Fish",
@@ -80,6 +107,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 2,
+      health: 3,
+    },
+    ability: {
+      levelOne: "Level-up: Give two friends +1 attack and +1 health.",
+      levelTwo: "Level-up: Give two friends +2 attack and +2 health.",
+      levelThree: "No ability.",
+    }
   },
   {
     name: "Horse",
@@ -88,6 +124,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 2,
+      health: 1,
+    },
+    ability: {
+      levelOne: "Friend summoned: Give it +1 attack until next turn.",
+      levelTwo: "Friend summoned: Give it +2 attack until next turn.",
+      levelThree: "Friend summoned: Give it +3 attack until next turn.",
+    }
   },
   {
     name: "Mosquito",
@@ -96,6 +141,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 2,
+      health: 2,
+    },
+    ability: {
+      levelOne: "Start of battle: Deal 1 damage to one random enemy.",
+      levelTwo: "Start of battle: Deal 1 damage to two random enemies.",
+      levelThree: "Start of battle: Deal 1 damage to three random enemies.",
+    }
   },
   {
     name: "Otter",
@@ -104,6 +158,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 1,
+      health: 3,
+    },
+    ability: {
+      levelOne: "Buy: Give one random friend +1 health.",
+      levelTwo: "Buy: Give two random friends +1 health.",
+      levelThree: "Buy: Give three random friends +1 health.",
+    }
   },
   {
     name: "Pig",
@@ -112,6 +175,15 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 4,
+      health: 1,
+    },
+    ability: {
+      levelOne: "Sell: Gain +1 Gold.",
+      levelTwo: "Sell: Gain +2 Gold.",
+      levelThree: "Sell: Gain +3 Gold.",
+    }
   },
   {
     name: "Pigeon",
@@ -120,6 +192,83 @@ const SuperAutoPets = [
     pack: 'turtle',
     packImg: "packsImages/turtlepack.png",
     tierImg: "tierDiceImages/tier1dice.png",
+    stats: {
+      damage: 3,
+      health: 1,
+    },
+    ability: {
+      levelOne: "Sell: Stock one free Bread Crumbs.",
+      levelTwo: "Sell: Stock two free Bread Crumbs.",
+      levelThree: "Sell: Stock three free Bread Crumbs.",
+    }
+  },
+  {
+    name: "Crab",
+    img: 'SuperAutoPetsImages/Crab.png',
+    tierNum: 2,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
+    tierImg: "tierDiceImages/tier2dice.png",
+    stats: {
+      damage: 4,
+      health: 1,
+    },
+    ability: {
+      levelOne: "Start of battle: Gain health equal to 25% of the most healthy friend.",
+      levelTwo: "Start of battle: Gain health equal to 50% of the most healthy friend.",
+      levelThree: "Start of battle: Gain health equal to 75% of the most healthy friend.",
+    }
+  },
+  {
+    name: "Flamingo",
+    img: 'SuperAutoPetsImages/Flamingo.png',
+    tierNum: 2,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
+    tierImg: "tierDiceImages/tier2dice.png",
+    stats: {
+      damage: 3,
+      health: 2,
+    },
+    ability: {
+      levelOne: "Faint: Give the two nearest friends behind +1 attack and +1 health.",
+      levelTwo: "Faint: Give the two nearest friends behind +2 attack and +2 health.",
+      levelThree: "Faint: Give the two nearest friends behind +3 attack and +3 health.",
+    }
+  },
+  {
+    name: "Hedgehog",
+    img: 'SuperAutoPetsImages/Hedgehog.png',
+    tierNum: 2,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
+    tierImg: "tierDiceImages/tier2dice.png",
+    stats: {
+      damage: 4,
+      health: 2,
+    },
+    ability: {
+      levelOne: "Faint: Deal 2 damage to ALL pets.",
+      levelTwo: "Faint: Deal 4 damage to ALL pets.",
+      levelThree: "Faint: Deal 6 damage to ALL pets.",
+    }
+  },
+  {
+    name: "Kangaroo",
+    img: 'SuperAutoPetsImages/Kangaroo.png',
+    tierNum: 2,
+    pack: 'turtle',
+    packImg: "packsImages/turtlepack.png",
+    tierImg: "tierDiceImages/tier2dice.png",
+    stats: {
+      damage: 2,
+      health: 3,
+    },
+    ability: {
+      levelOne: "Friend ahead attacks: Gain +1 attack and +1 health.",
+      levelTwo: "Friend ahead attacks: Gain +2 attack and +2 health.",
+      levelThree: "Friend ahead attacks: Gain +3 attack and +3 health.",
+    }
   },
 ]
 
@@ -198,7 +347,7 @@ const createCard = (data) => {
               <img id="tier-img" src="${data.tierImg}" />
               <img id="pack-img" src="${data.packImg}" />        
             </div>
-            <a href="${data.statsLink}">
+            <a href="stats.html?name=${data.name}">
               <button class="stats-button">stats</button>
             </a>
           </div>
@@ -207,26 +356,10 @@ const createCard = (data) => {
     `);
 };
 
-
-const statsCard = (data) => {
-  return (
-    `
-          <h2>${data.name}</h2>
-    `);
-}
-
 const displayCards = (filter = 'all') => {
   cardContainer.innerHTML = '';
   SuperAutoPets.filter(data => filter === 'all').forEach(data => {
     cardContainer.innerHTML += createCard(data);
-  })
-}
-
-
-const displayStats = (filter = 'all') => {
-  statsContainer.innerHTML = '';
-  SuperAutoPets.filter(data => filter === 'all').forEach(data => {
-  statsContainer.innerHTML += statsCard(data);
   })
 }
 
@@ -242,10 +375,11 @@ function searchBar() {
   })
 }
 
-function filterCards(filter) {
-  document.querySelector('.button-container .filter-button').forEach(btn => {
-      btn.classList.toggle('active');
+function filterCards(filter, btnPressed) {
+  document.querySelectorAll('.filter-button').forEach(btn => {
+      btn.classList.remove('active');
   })
+  btnPressed.classList.add('active');
 
   document.querySelectorAll('.card').forEach(card => {
     const tier = card.getAttribute('data-tier');
@@ -259,7 +393,6 @@ function filterCards(filter) {
 
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", () => displayCards());
-document.addEventListener("DOMContentLoaded", () => displayStats());
 /*
 function quoteAlert() {
   console.log("Button Clicked!");

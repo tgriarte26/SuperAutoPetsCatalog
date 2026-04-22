@@ -8,7 +8,9 @@
 
   <body>
     <header class="main-header">
-      <img id="logo" src="assets/logo.png"/>
+      <a class="image-link" href="/">
+        <img id="logo" src="assets/logo.png"/>
+      </a>
     </header>
     <div class="search-bar">
       <div class="input-filter">
@@ -16,33 +18,33 @@
       </div>
     </div>
     <div class="button-container">
-      <button class="filter-button active" onclick="filterCards('all')">All</button>
-      <button class="filter-button" onclick="filterCards('1')">
+      <button class="filter-button active" onclick="filterCards('all', this)">All</button>
+      <button class="filter-button" onclick="filterCards('1', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier1dice.png"/>Tier 1
         </div>
       </button>
-      <button class="filter-button" onclick="filterCards('2')">
+      <button class="filter-button" onclick="filterCards('2', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier2dice.png"/>Tier 2
         </div>
       </button>
-      <button class="filter-button" onclick="filterCards('3')">
+      <button class="filter-button" onclick="filterCards('3', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier3dice.png"/>Tier 3
         </div>
       </button>
-      <button class="filter-button" onclick="filterCards('4')">
+      <button class="filter-button" onclick="filterCards('4', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier4dice.png"/>Tier 4
         </div>
       </button>
-      <button class="filter-button" onclick="filterCards('5')">
+      <button class="filter-button" onclick="filterCards('5', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier5dice.png"/>Tier 5
         </div>
       </button>
-      <button class="filter-button" onclick="filterCards('6')">
+      <button class="filter-button" onclick="filterCards('6', this)">
         <div class="inside-filter-button">
           <img src="tierDiceImages/tier6dice.png"/>Tier 6
         </div>
@@ -50,10 +52,7 @@
     </div>
     <div class="card-container"></div>
     <div class="footer">
-      <!--
-        <button onclick="quoteAlert()">Get A Quote!</button>
-        <button onclick="removeLastCard()">Remove A Card!</button>
-      -->
+      <h2>Made by Trev</h2>
     </div>
     <script type="text/javascript" src="scripts.js"></script>
   </body>
